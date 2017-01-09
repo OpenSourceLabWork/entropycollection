@@ -13,14 +13,14 @@ public class MainString {
 		String[] attributes = StringDataLoader.attributes;
 		
 		/**	Shanaon Entropy*/
-//		int i=0;
+//		int in=0;
 //		for(String[] vector : vectors){
 //			double entropy = EntropyString.calculateEntropyString(vector);
-//			System.out.print(attributes[i]+" = " + entropy);
+//			System.out.print(attributes[in]+" = " + entropy);
 //			System.out.println("\n");
-//			i++;
+//			in++;
 //		}
-		System.out.println("\n\n");
+//		System.out.println("\n\n");
 		
 		/**	Finding Conditional Entropy of two attributes**/
 		System.out.println("Conditional Entropy.....");
