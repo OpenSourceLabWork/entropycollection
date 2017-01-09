@@ -24,7 +24,7 @@ public class StringDataLoader {
 			List<String[]> list = new ArrayList<String[]>();
 			
 			while ((line = br.readLine()) != null) {
-				String[] doc = line.split(",");
+				String[] doc = line.split(",");			
 				list.add(doc);
 				cols = doc.length;
 			}
