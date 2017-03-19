@@ -8,23 +8,26 @@ import mak.entropycollection.stringmodels.EntropyString;
 public class MainString {
 
 	public static void main(String[] args) {
-		String[][] dataset = StringDataLoader.readcsvfile("ProductComparison.csv");
+		String[][] dataset = StringDataLoader.readcsvfile("datasetscale.csv");
 		List<String[]> vectors = StringDataLoader.transpose(dataset);
 		String[] attributes = StringDataLoader.attributes;
 		
 		/**	Shanaon Entropy*/
-//		int in=0;
-//		for(String[] vector : vectors){
-//			double entropy = EntropyString.calculateEntropyString(vector);
-//			System.out.print(attributes[in]+" = " + entropy);
-//			System.out.println("\n");
-//			in++;
-//		}
-//		System.out.println("\n\n");
+		int in=0;
+		for(String[] vector : vectors){
+			double entropy = EntropyString.calculateEntropyString(vector);
+			System.out.print(attributes[in]+" = " + entropy);
+			System.out.println("\n");
+			in++;
+		}
+		System.out.println("\n\n");
 		
 		/**	Finding Conditional Entropy of two attributes**/
 		System.out.println("Conditional Entropy.....");
 		System.out.print("\t\t");
+		System.out.println(attributes.length);
+		
+		
 		for(String val : attributes){
 			System.out.print(val+",");
 		}
@@ -44,15 +47,21 @@ public class MainString {
 	public static List<double[]> getEntropyTable(List<String[]> vectors){
 		List<double[]> r_vectors = new ArrayList<double[]>();
 		int j = 0;
+//		System.out.println("Vector size : "+vectors.size());
 		for (String[] vector : vectors) {
+//			System.out.println("Vector size : "+vector.length);
 			double[] temp = new double[(vector.length)+2];
+//			System.out.println("Vector size : "+temp.length);
 			int k = 0;
 			for (String[] vector2 : vectors) {
 				if (j != k){
+//					System.out.println(k+" ");
 					double entropy = EntropyString.calculateConditionalEntropy(vector, vector2);
 					temp[k] = round((entropy),3);
+//					System.out.println(" : "+entropy);
 				}else{
-					temp[k] = 0;
+//					System.out.println(k+" ");
+					temp[k] = 0.000000;
 				}
 				k++;
 			}

@@ -33,8 +33,10 @@ public class DataLoader {
 			matrix = new int[list.size()][cols];
 			for(String[] doc : list ){
 				for(int col = 0; col < doc.length; col++){
+//					System.out.print(Integer.parseInt(doc[col]));
 					matrix[rows][col] = Integer.parseInt(doc[col]);
 				}
+				System.out.println();	
 			rows++;	
 			}
 		} catch (FileNotFoundException e) {

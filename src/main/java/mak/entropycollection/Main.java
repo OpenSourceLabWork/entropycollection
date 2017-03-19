@@ -8,7 +8,7 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		int[][] dataset = DataLoader.readcsvfile("datasdet.csv");
+		int[][] dataset = DataLoader.readcsvfile("desiredattributes.csv");
 		List<double[]> vectors = DataLoader.transpose(dataset);
 		String[] attributes = DataLoader.attributes;
 
